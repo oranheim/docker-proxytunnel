@@ -22,5 +22,13 @@ Host ssh.example.com
 ```
 
 ```bash
-docker run -it -v SSH_CONFIG=$HOME/.proxytunnel:/proxytunnel -e SSH=user@ssh.example.com: descoped/proxytunnel
+docker run -it -v SSH_CONFIG=$HOME/ssh-config:/opt/proxytunnel/.ssh -e SSH=user@ssh.example.com descoped/proxytunnel
+```
+
+```bash
+docker run -it -e HOST=ssh.example.com -e PORT=443(default) -e USER=user descoped/proxytunnel
+```
+
+```bash
+./sshproxy.sh `PWD`/proxytunnel user@ssh.example.com
 ```

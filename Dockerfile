@@ -17,6 +17,9 @@ RUN apt-get -y update \
 RUN mkdir -p /opt/proxytunnel \
     && chown -R ${RUN_USER}:${RUN_GROUP} /opt/proxytunnel
 
+VOLUME /opt/proxytunnel/.ssh
 WORKDIR /opt/proxytunnel
 
-CMD ["/bin/bash"]
+ENTRYPOINT ["/bin/sh", "-c", "ssh $SSH"]
+#CMD ["/bin/bash"]
+
