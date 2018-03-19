@@ -1,5 +1,0 @@
-Host main.route-66.no
-   Hostname main.route-66.no
-   ProtocolKeepAlives 30
-   ProxyCommand /usr/bin/proxytunnel -E -p main.route-66.no:443 -d %h:%p
-
