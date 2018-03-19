@@ -7,11 +7,12 @@ ENV RUN_GROUP   daemon
 
 RUN apt-get -y update \
     && apt-get -y upgrade \
-    && apt-get -y install apt-utils ca-certificates openssl wget curl vim ssh-client proxytunnel
+    && apt-get -y install apt-utils ca-certificates openssl wget curl vim ssh-client proxytunnel git iputils-ping
 
 # ~/.ssh/config
 # mkdir ~/.ssh
-#
+# copy config file to ~/.ssh/
+# default entrypoint cmd: sh -c "cmd"
 
 RUN mkdir -p /opt/proxytunnel \
     && chown -R ${RUN_USER}:${RUN_GROUP} /opt/proxytunnel
